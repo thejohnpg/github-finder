@@ -1,12 +1,16 @@
 import React from 'react';
+
 import './App.css';
+import Container from './components/container'
 
-function App() {
-  return (
-    <div className="App">
-     <h2>Hello World !</h2>
-    </div>
-  );
-}
 
-export default App;
+  function App() {
+    return (
+      <div className="App">
+       <Container />
+      </div>
+      
+    );
+  }
+
+  export default App;
