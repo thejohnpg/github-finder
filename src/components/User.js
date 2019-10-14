@@ -27,16 +27,22 @@ render() {
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="h2">
                                 {this.props.listaUsuarios.name}
-                                <span className="">  @{this.props.listaUsuarios.login }</span>
+                                <span className="spanSubTitle">  @{this.props.listaUsuarios.login }</span>
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">{this.props.listaUsuarios.bio}</Typography>
                             <Typography variant="body2" color="textSecondary" component="p">{this.props.listaUsuarios.company}</Typography>
                             <Typography variant="body2" color="textSecondary" component="p">{this.props.listaUsuarios.location}</Typography>
-
+                            
+                            <div className="divBtn">
                             <IconButton aria-label="play/pause" target="_blank" a href={this.props.listaUsuarios.html_url} className="btnAcessar"> Acessar GitHub
                                 <PlayArrowIcon className="" />
                             </IconButton>
+                            </div>
+                            
+                            
                         </CardContent>
+                        
+                        
 
                     </div>                    
                 </div>

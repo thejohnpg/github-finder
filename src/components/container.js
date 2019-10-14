@@ -58,7 +58,7 @@ class Container extends React.Component {
         }
 
         catch(error){
-            this.setState({msgErro: "Errrou !"})
+            this.setState({msgErro: "O usuário pesquisado não consta no Github !"})
     }
 }
     
@@ -99,13 +99,14 @@ class Container extends React.Component {
                     className="btnAdd">
                     Buscar
                     </Button>
-
-                    { dadosAtualizados }
-
                     <div className="msgErro">
                         {this.state.msgErro}
                     </div>
    
+
+                    { dadosAtualizados }
+
+                    
 
                 </Grid>
 
