@@ -1,12 +1,3 @@
-@media (min-width: 1440px) {
-    .divConteudo{
-    width: 100%!important;
-    }
-    .btnAcessar{
-        margin: 0 auto!important;
-    }
-}
-
 .divConteudo{
     display: flex!important;
     width: 80%!important;
@@ -169,6 +160,15 @@
     }
     .divConteudo{
         margin-left: 10em!important;
+    }
+}
+
+@media (min-width: 1440px) {
+    .divConteudo{
+    width: 100%!important;
+    }
+    .btnAcessar{
+        margin: 0 auto!important;
     }
 }
 
