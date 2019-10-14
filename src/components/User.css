@@ -1,0 +1,61 @@
+@media (min-width: 1440px) {
+    .divConteudo{
+    width: 100%!important;
+    }
+    .btnAcessar{
+
+        margin-left: 5vh!important;
+    }
+}
+
+.divConteudo{
+    display: flex!important;
+    width: 80%!important;
+    margin: 0 auto!important;
+    margin-top: 2%!important;
+    margin-bottom: -1%!important;
+}
+
+.divList{
+    width: 80%!important;
+    margin: 0 auto!important;
+    
+}
+.imgList{
+    width: 10%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgGitHub{
+    margin: 10px!important;
+    width: 5rem!important;
+    height: 5rem!important;
+    margin-right: 5%!important;
+}
+
+.nameGitHub{
+    width: 80%!important;
+    font-size: 1em!important;
+    margin-right: 75%!important;
+    margin: 0 auto!important;
+
+}
+
+.descriptionGitHub{
+    display: flex;
+    width: 80%!important;
+    margin: 0 auto!important;
+}
+
+.businessGitHub{
+    margin-top: 2%!important;
+
+}
+.locationGitHub{
+    margin: 0 auto!important;
+
+}
+

@@ -1,100 +1,124 @@
 import React from 'react';
-import './../App.css';
+
+import Alert from 'react-bootstrap/Alert'
 
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/Textfield';
 import Button from '@material-ui/core/Button';
+import SnackbarContent from '@material-ui/core/SnackbarContent';
 
+import api from './../api'
 import './container.css'
-
+import User from './User'
 
 class Container extends React.Component {
-        constructor() {
-            super();
-            this.handleSubmit = this.handleSubmit.bind(this);
-            this.handleChange = this.handleChange.bind(this);
+    constructor() {
+        super();
+        
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
 
-            this.state = {
-                usergithub: [],
-                userfind: [],
-                userurl: [],
-                imgavatar: [],
-                public_repos: []
-            }
+        this.state = {
+            usergithub:'',
+            listaUsuarios:[],
+            msgErro:''
+        }
+    }
+
+    async handleSubmit(event) {
+        event.preventDefault();
+        this.state.msgErro = '';
+        try{
+
+            if (this.state.usergithub == '')
+            return
+
+            const response = await api.get(`/${this.state.usergithub}`)
+
+            const { avatar_url, login, name, bio,  company, location, html_url, node_id } = response.data;
+
+            let tempData = {
+                avatar_url,
+                login,
+                name,
+                bio,
+                company,
+                location,
+                html_url,
+                node_id,
+                }
+
+
+            this.state.listaUsuarios.push(tempData)
+
+            this.setState({listaUsuarios: this.state.listaUsuarios})
+            // não sei deveria usar isso rs =)
+
+            console.log(this.state.listaUsuarios)
         }
 
-        
-        componentDidMount() {
-            
-          }
-          
-        
-
-        handleSubmit(event) {
-            event.preventDefault();
-            fetch(`https://api.github.com/users/${this.state.usergithub}`, {
-                method: 'GET',
-                headers: {
-                    "Accept": "application/json",
-                    'Content-Type': 'application/json'
-                    }
-            })
-              .then(data => data.json())
-              .then(data => this.setState({ 
-                  userfind: data.login,
-                  userurl: data.html_url,
-                  imgavatar: data.avatar_url,
-                  public_repos: data.public_repos
-                 }));
-              console.log(this.state.usergithub)
-        }
-
-        handleChange(event) {
-            event.preventDefault();
-            this.setState({usergithub: event.target.value});
-          }
+        catch(error){
+            this.setState({msgErro: "Errrou !"})
+    }
+}
     
 
-    render() {
+    handleChange(event) {
+        event.preventDefault();
+        
+        this.setState({usergithub: event.target.value});
+    }
+
+    
+
+    
+
+      render() {
+        let dadosAtualizados = [];
+        for (let i = 0; i < this.state.listaUsuarios.length ; i++) {
+            dadosAtualizados.push(<User key={i} listaUsuarios={this.state.listaUsuarios[i]} />)
+        }
         return (
-                <form onSubmit={this.handleSubmit}>
-                    <Grid item xs={12}>
+            <form onSubmit={this.handleSubmit}>
+                <Grid item xs={12}>
 
-                        <TextField
-                        id="standard-name"
-                        label="GitHub Username"
-                        className=""
-                        value={this.state.value}
-                        onChange={this.handleChange}
-                        placeholder="@user"
-                        />
+                    <TextField
+                    id="standard-name"
+                    label="GitHub Username"
+                    className="standard-name"
+                    value={this.state.usergithub}
+                    onChange={this.handleChange}
+                    placeholder="@username"
+                    onClick={this.btnsubmit}
+                    />
 
-                        <Button 
-                        type="submit"
-                        variant="contained" 
-                        color="primary" 
-                        className="btnAdd">
-                        Buscar
-                        </Button>
-                        <h4> { this.state.userfind } </h4>
-                        <h4> { this.state.userurl } </h4>
-                        <h4> {`Repositórios Públicos ${this.state.public_repos}` } </h4>
-                        <img
-                        className="imgAvatarGithub"
-                        src={ 
-                            this.state.imgavatar 
-                        }/>
-                        
+                    <Button 
+                    type="submit"
+                    variant="contained" 
+                    color="primary" 
+                    className="btnAdd">
+                    Buscar
+                    </Button>
 
-                    </Grid>
-                </form>
-                );
-            }
+                    { dadosAtualizados }
+
+                    <div className="msgErro">
+                        {this.state.msgErro}
+                    </div>
+   
+
+                </Grid>
+
+
+            </form>
+            );
         }
+        
+    }
+
     
-
-
-    export default Container
+   
+export default Container
         
     
 
