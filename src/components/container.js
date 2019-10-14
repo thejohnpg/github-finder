@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Alert from 'react-bootstrap/Alert'
-
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/Textfield';
 import Button from '@material-ui/core/Button';
@@ -60,60 +58,52 @@ class Container extends React.Component {
             this.setState({msgErro: "O usuário pesquisado não consta no Github !"})
     }
 }
-    
 
     handleChange(event) {
         event.preventDefault();
-        
         this.setState({usergithub: event.target.value});
     }
 
-    
+    render() {
 
-    
-
-      render() {
         let dadosAtualizados = [];
         for (let i = 0; i < this.state.listaUsuarios.length ; i++) {
             dadosAtualizados.push(<User key={i} listaUsuarios={this.state.listaUsuarios[i]} />)
         }
-        return (
-            <form onSubmit={this.handleSubmit}>
-                <Grid item xs={12}>
 
-                    <TextField
-                    id="standard-name"
-                    label="GitHub Username"
-                    className="standard-name"
-                    value={this.state.usergithub}
-                    onChange={this.handleChange}
-                    placeholder="@username"
-                    onClick={this.btnsubmit}
-                    />
+    return (
+        <form onSubmit={this.handleSubmit}>
+            <Grid item xs={12}>
 
-                    <Button 
-                    type="submit"
-                    variant="contained" 
-                    color="primary" 
-                    className="btnAdd">
-                    Buscar
-                    </Button>
-                    <div className="msgErro">
-                        {this.state.msgErro}
-                    </div>
-   
+                <TextField
+                id="standard-name"
+                label="GitHub Username"
+                className="standard-name"
+                value={this.state.usergithub}
+                onChange={this.handleChange}
+                placeholder="@username"
+                onClick={this.btnsubmit}
+                />
 
-                    { dadosAtualizados }
+                <Button 
+                type="submit"
+                variant="contained" 
+                color="primary" 
+                className="btnAdd">
+                Buscar
+                </Button>
+                <div className="msgErro">
+                    {this.state.msgErro}
+                </div>
 
-                    
+                { dadosAtualizados }
 
-                </Grid>
+            </Grid>
 
+        </form>
 
-            </form>
-            );
-        }
-        
+        )}
+
     }
 
     
