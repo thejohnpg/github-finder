@@ -8,7 +8,6 @@ import Button from '@material-ui/core/Button';
 import SnackbarContent from '@material-ui/core/SnackbarContent';
 
 import api from './../api'
-import './container.css'
 import User from './User'
 
 class Container extends React.Component {
