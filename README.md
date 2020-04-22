@@ -20,10 +20,13 @@ O app foi construído em [ReactJs](reactjs.org) sem a necessidade de backend
 Download the project in [Github](https://github.com/thejohnpg/github-finder)
 https://github.com/thejohnpg/github-finder
 👇
+
 ` cd github-finder`
 👇
+
 `yarn` *(to install the dependencies)*
 👇
+
 `yarn start` *(to start the server)*
 
 If all goes well, you should view the content at [http: // localhost: 3000] (http: // localhost: 3000)
