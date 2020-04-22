@@ -1,0 +1,68 @@
+.container {
+    display: flex;
+    background-color: #3D1363;
+    overflow: auto; 
+    padding: 16px;
+}
+
+.inputFinderGithub {
+    height: 6vh;
+    width: 80%;
+    padding: 8px 16px;
+    outline: none;
+    border-radius: 8px;
+    color: #AF71E8;
+    margin-top: 25%;
+    box-sizing: border-box;
+}
+
+.inputFinderGithub::placeholder {
+    color: #AF71E8;
+    opacity: 0.4;
+}
+
+.inputFinderGithub::selection {
+    background-color: #AF71E8;
+    color: #fff;
+}
+
+.buttonAdd {
+    width: 40%;
+    height: 4vh;
+    background-color: #159642;
+    padding: 8px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    color: rgb(199, 199, 199);
+    margin-top: 2vh;
+    cursor: pointer;
+    transition: linear background-color 200ms;
+}
+
+.buttonAdd:hover {
+    background-color: #10b94b;
+    color: #fff;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+@media (min-width: 1024px)  {
+    .inputFinderGithub {
+        margin-top: 15%;
+    }
+    .inputFinderGithub {
+        width: 40%;
+        height: 4vh;
+    }
+    .buttonAdd {
+        width: 20%;
+    }
+}

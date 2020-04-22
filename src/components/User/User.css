@@ -1,0 +1,103 @@
+.containerUser{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90vw;
+    margin: 0 auto;
+    margin-top: 2vh;
+    box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.imgList .imgGitHub {
+    width: 100px;
+    border-radius: 30%;
+}
+
+.card {
+    display: flex;
+    padding: 0 16px;
+    flex-direction: column
+}
+
+.card span{
+    font-size: 12px;
+    color: #bbbbbb;
+}
+
+.headerCard {
+    display: flex;
+    align-self: center;
+    padding: 0 0 4px 0;
+}
+
+.card .headerCard span{
+    margin: 0 4px 0 4px;
+}
+
+.nameGithub {
+    font-weight: 500;
+}
+
+.loginGithub {
+    opacity: 0.5;
+}
+
+
+.companyCard {
+    display: flex;
+    align-self: center;
+    padding: 4px 0;
+}
+
+.card .companyCard span{
+    margin: 0 4px 0 4px;
+}
+
+.card span.cardUserCompany, .card span.cardUserLocation {
+    font-size: 8px;
+}
+
+.footerCard {
+    display: flex;
+    align-self: center;
+    padding: 4px 0;
+}
+
+.footerCard .buttonGo {
+    display: flex;
+    width: 40vw;
+    height: 3vh;
+    background-color: #AF71E8;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonGo {
+    background-color: #AF71E8;
+    width: 20vw;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2vh;
+    text-decoration: none;
+
+}
+
+.card .companyCard span.linkGitHub {
+    color: #fff;
+}
+
+@media (min-width: 1024px)  {
+    .containerUser{
+        width: 50vw;
+        flex-direction: column;
+    }
+    .buttonGo {
+        height: 4vh;
+    }
+}
+
