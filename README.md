@@ -2,6 +2,7 @@
 # .:: Github Finder::.
 ![](https://media.giphy.com/media/YlGkwCYLxjepYtEnDU/giphy.gif)
 ![](https://media.giphy.com/media/lSE3dmRf4HUSOLIEbY/giphy.gif)
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/cc1740cd-b087-473d-a144-bc8be7968450/deploy-status)](https://app.netlify.com/sites/github-finder-reactjs/deploys)
 
 
