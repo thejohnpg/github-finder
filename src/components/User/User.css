@@ -1,3 +1,6 @@
+*{ 
+  font-family: 'Ubuntu', sans-serif;
+}
 .containerUser{
     display: flex;
     justify-content: space-around;
@@ -27,15 +30,18 @@
 .headerCard {
     display: flex;
     align-self: center;
+    align-items: center;
     padding: 0 0 4px 0;
+    margin-top: 1vh;
 }
 
 .card .headerCard span{
     margin: 0 4px 0 4px;
 }
 
-.nameGithub {
+.card .headerCard .nameGithub {
     font-weight: 500;
+    color: #fff;
 }
 
 .loginGithub {
@@ -63,16 +69,6 @@
     padding: 4px 0;
 }
 
-.footerCard .buttonGo {
-    display: flex;
-    width: 40vw;
-    height: 3vh;
-    background-color: #AF71E8;
-    border-radius: 8px;
-    justify-content: center;
-    align-items: center;
-}
-
 .buttonGo {
     background-color: #AF71E8;
     width: 20vw;
@@ -84,10 +80,17 @@
     align-items: center;
     height: 2vh;
     text-decoration: none;
+    padding: 4px;
+    transition: linear opacity 200ms;
+}
 
+.buttonGo:hover {
+    opacity: 0.8;
 }
 
 .card .companyCard span.linkGitHub {
+
+    font-weight: 600;
     color: #fff;
 }
 

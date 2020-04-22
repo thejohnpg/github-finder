@@ -53,7 +53,6 @@ class Container extends React.Component {
 
       this.setState({ listaUsuarios: this.state.listaUsuarios });
 
-      console.log(this.state.listaUsuarios);
     } catch (error) {
       this.setState({ msgErro: "O usuário pesquisado não consta no Github !" });
     }
@@ -80,12 +79,11 @@ class Container extends React.Component {
             value={this.state.usergithub}
             onChange={this.handleChange}
             placeholder="@username"
-            onClick={this.btnsubmit}
           />
+          <div className="errorMsg">{this.state.msgErro}</div>
 
           <button className="buttonAdd">Buscar</button>
 
-          <div className="msgErro"></div>
 
           {dadosAtualizados}
         </form>
