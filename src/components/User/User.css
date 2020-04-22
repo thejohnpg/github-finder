@@ -52,6 +52,8 @@
 .companyCard {
     display: flex;
     align-self: center;
+    justify-content: center;
+    align-items: center;
     padding: 4px 0;
 }
 

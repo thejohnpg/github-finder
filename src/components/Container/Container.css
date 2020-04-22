@@ -28,7 +28,6 @@
 
 .buttonAdd {
     width: 40%;
-    height: 4vh;
     background-color: #159642;
     padding: 8px;
     outline: none;
@@ -53,11 +52,50 @@
     width: 100%;
 }
 
+.buttonGoAndClean {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+.buttonClean {
+    background-color: #4B3163;
+    padding: 8px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    margin-top: 2vh;
+    cursor: pointer;
+    transition: linear opacity 200ms;
+}
+
+.buttonClean:hover {
+    opacity: 0.7;
+}
+
 .errorMsg {
     width: 100%;
     padding: 8px;
-    color: #E6DB65;
+    color: #c179f9;
+    position: fixed;
+    bottom: 0;
+    animation-duration: 3s;
+    animation-name: slidein;
+    user-select: none;
 }
+
+@keyframes slidein {
+    from {
+      margin-bottom: -10%;
+    }
+  
+    to {
+      margin-top: 0%;
+      width: 99vw;
+    }
+}
+
 
 @media (min-width: 1024px)  {
     .inputFinderGithub {
@@ -67,7 +105,13 @@
         width: 40%;
         height: 4vh;
     }
+    .buttonGoAndClean {
+        width: 40%;
+    }
     .buttonAdd {
+        width: 30%;
+    }
+    .buttonClean {
         width: 20%;
     }
 }

@@ -50,7 +50,8 @@ class Container extends React.Component {
       };
 
       this.state.listaUsuarios.push(tempData);
-
+      this.state.usergithub = '';
+      
       this.setState({ listaUsuarios: this.state.listaUsuarios });
 
     } catch (error) {
@@ -63,7 +64,16 @@ class Container extends React.Component {
     this.setState({ usergithub: event.target.value });
   }
 
+  handleClean = event => {
+    event.preventDefault();
+    this.setState({ usergithub: '' });
+    this.setState({ msgErro: '' });
+    this.state.listaUsuarios = [];
+    this.setState({ listaUsuarios: this.state.listaUsuarios });
+  }
+
   render() {
+    
     let dadosAtualizados = [];
     for (let i = 0; i < this.state.listaUsuarios.length; i++) {
       dadosAtualizados.push(
@@ -82,12 +92,12 @@ class Container extends React.Component {
           />
           <div className="errorMsg">{this.state.msgErro}</div>
 
-          <button className="buttonAdd">Buscar</button>
-
-
+          <div className="buttonGoAndClean">
+            <button className="buttonAdd">Buscar</button>
+            <button className="buttonClean" onClick={this.handleClean}>Limpar</button>
+          </div>
           {dadosAtualizados}
         </form>
-        
       </div>
     );
   }
